@@ -10,11 +10,18 @@ Red [
 
 view/flags [    
     title "Contatos"
-    size 400x100
+    size 600x400
+    button "Novo" [quit]
+    button "Procurar" [quit]
+    button "Editar" [quit]
+    button "Imprimir" [quit]
+    button "Sair" [quit]   
+    return
     below
-    text "Olá, mundo gráfico em Red"
-    button "Fechar" [quit]    
-    text "Desenvolvido por Alexandre Barbosa +55 31 9.98792-4184"    
+    text "Olá, mundo gráfico em Red" 
+    rich-text 400x20 "Desenvolvido por Alexandre Barbosa +55 31 9.98792-4184" with [
+        data: [17x17 bold]
+    ]    
     ]
 
     [resize]
