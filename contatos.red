@@ -8,8 +8,13 @@ Red [
     Needs:   'View
 ]
 
-view [
-	title "Cadastro"
-    text "Olá, mundo gráfico em Red!"
-    button "Fechar" [quit]
-]
+view/flags [    
+    title "Contatos"
+    size 400x100
+    below
+    text "Olá, mundo gráfico em Red"
+    button "Fechar" [quit]    
+    text "Desenvolvido por Alexandre Barbosa +55 31 9.98792-4184"    
+    ]
+
+    [resize]

@@ -1,3 +1,3 @@
 @echo off
-com %1 -r -t Windows
+com -r -t Windows %1
 cls
