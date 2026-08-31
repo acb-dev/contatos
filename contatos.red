@@ -24,7 +24,10 @@ view/flags [
     return
     below            
     h5 "Cadastre o contato"
-    across     
+    across  
+    text "Chave Primaria"
+    text "0123456789001234567890abl"
+    return   
     text "Nome"
     nome: field 400    
     text "Nascimento(dd/mm/aaaa)"   
