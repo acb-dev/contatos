@@ -10,9 +10,9 @@ Red [
 
 view/flags [    
     title "Contatos"
-    size 800x600
-    below
+    size 900x600
     space 3x3
+    below
     text ""    
     across
     button "Novo" [quit]
@@ -22,33 +22,31 @@ view/flags [
     button "Imprimir" [quit]
     button "Sair" [quit]   
     return
-    below
-    text ""
-    h5 "Cadastre o contato" 
-    across
+    below            
+    h5 "Cadastre o contato"
+    across     
     text "Nome"
-    nome: field 400
-    text "Nascimento(dd/mm/aaaa)"
-    space 3x3
+    nome: field 400    
+    text "Nascimento(dd/mm/aaaa)"   
     dd: field 20
-    text "/"
+    rich-text 10x20 "/"
     mm: field 20
-    text "/"
-    aaaa: field 40
+    rich-text 10x20 "/"
+    aaaa: field 40    
     return
+    across
     text "DDD"
     ddd: field 30
     text "Telefone"    
     telefone1: field 45 "9"
-    text "-"
+    rich-text 10x20 "-"
     telefone2: field 45   
-    return
     text "Email"
     email: field 400
     return
     text "Rua"
     rua: field 400
-    text "n°"
+    rich-text 20x20 "n°"
     numero: field 60
     return
     text "Complemento" 
@@ -58,7 +56,7 @@ view/flags [
     return
     text "Cidade"
     cidade: field 200
-    text "UF"
+    rich-text 20X20 "UF"
     uf: drop-down data[
         "Acre (AC)"
         "Alagoas (AL)"
