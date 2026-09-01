@@ -8,7 +8,8 @@ Red [
     Needs:   'View
 ]
 
-idadizar: [2 + 2]
+idadizar: [2 + 198]
+codificar: [to string! now/time ]
 
 view/flags [    
     title "Contatos"
@@ -28,23 +29,24 @@ view/flags [
     h5 "Cadastre o contato"
     across
     text "Chave Primaria"
-    chavePrimaria: field 185
+    chavePrimaria: text 185 ""
     do [chavePrimaria/text: to string! now/precise] 
-    text "Código"
+    text 45 "Código"
     codigo: field 100
-    text "Apelido"
+    do [codigo/text: do codificar[]]
+    text 45 "Apelido"
     apelido: field 300
     return   
     text "Nome"
     nome: field 400    
     text "Nascimento(dd/mm/aaaa)"   
     dd: field 20
-    rich-text 10x20 "/"
+    text 10 "/"
     mm: field 20
-    rich-text 10x20 "/"
+    text 10 "/"
     aaaa: field 40
-    text "Idade"
-    idade: field 30
+    text 30 "Idade"    
+    idade: text 20 ""
     do [idade/text: to string! do idadizar[] ]    
     return
     across
@@ -52,24 +54,24 @@ view/flags [
     ddd: field 30
     text "Telefone"    
     telefone1: field 45 "9"
-    rich-text 10x20 "-"
+    text 10 "-"
     telefone2: field 45   
-    text "Email"
+    text 30 "Email"
     email: field 400
     return
     text "Rua"
     rua: field 400
-    rich-text 20x20 "n°"
+    text 20 "n°"
     numero: field 60
     return
     text "Complemento" 
     complemento: field 120
-    text "Bairro" 
+    text 35 "Bairro" 
     bairro: field 200
     return
     text "Cidade"
     cidade: field 200
-    rich-text 20X20 "UF"
+    text 20 "UF"
     uf: drop-down data[
         "Acre (AC)"
         "Alagoas (AL)"
@@ -111,3 +113,5 @@ view/flags [
     ]
 
     [resize]
+
+    
