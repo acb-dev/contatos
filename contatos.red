@@ -8,6 +8,8 @@ Red [
     Needs:   'View
 ]
 
+idadizar: [2 + 2]
+
 view/flags [    
     title "Contatos"
     size 900x600
@@ -26,8 +28,9 @@ view/flags [
     h5 "Cadastre o contato"
     across
     text "Chave Primaria"
-    chavePrimaria: text ""
-    text "Código" 
+    chavePrimaria: field 185
+    do [chavePrimaria/text: to string! now/precise] 
+    text "Código"
     codigo: field 100
     text "Apelido"
     apelido: field 300
@@ -39,7 +42,10 @@ view/flags [
     rich-text 10x20 "/"
     mm: field 20
     rich-text 10x20 "/"
-    aaaa: field 40    
+    aaaa: field 40
+    text "Idade"
+    idade: field 30
+    do [idade/text: to string! do idadizar[] ]    
     return
     across
     text "DDD"
