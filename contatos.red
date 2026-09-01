@@ -24,9 +24,13 @@ view/flags [
     return
     below            
     h5 "Cadastre o contato"
-    across  
+    across
     text "Chave Primaria"
-    text "0123456789001234567890abl"
+    chavePrimaria: text ""
+    text "Código" 
+    codigo: field 100
+    text "Apelido"
+    apelido: field 300
     return   
     text "Nome"
     nome: field 400    
