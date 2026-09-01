@@ -52,7 +52,7 @@ view/flags [
     across
     text "DDD"
     ddd: field 30
-    text "Telefone"    
+    text 45 "Telefone"    
     telefone1: field 45 "9"
     text 10 "-"
     telefone2: field 45   
