@@ -22,8 +22,13 @@ view/flags [
     button "Procurar" [quit]
     button "Editar" [quit]
     button "Gravar" [quit]
+    button "Primeiro" [quit]    
+    button "Anterior" [quit]
+    button "Próximo" [quit]
+    button "Último" [quit]  
     button "Imprimir" [quit]
-    button "Sair" [quit]   
+    button "Listar" [quit]
+    button "Sair" [quit] 
     return
     below            
     h5 "Cadastre o contato"
@@ -111,7 +116,7 @@ view/flags [
         data: [17x17 bold]
     ]    
     ]
-
     [resize]
+
 
     
