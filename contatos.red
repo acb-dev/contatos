@@ -8,8 +8,7 @@ Red [
     Needs:   'View
 ]
 
-idadizar: [2 + 198]
-codificar: [to string! now/time ]
+do %formulario.red
 
 view/flags [    
     title "Contatos"
@@ -116,7 +115,4 @@ view/flags [
         data: [17x17 bold]
     ]    
     ]
-    [resize]
-
-
-    
+    [resize]   
