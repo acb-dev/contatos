@@ -51,7 +51,9 @@ view/flags [
     aaaa: field 40
     text 30 "Idade"    
     idade: text 20 ""
-    do [idade/text: to string! do idadizar[] ]    
+    ;do [idade/text: to string! do idadizar[] ] 
+    ;idade/text: etariar to-integer dd/text to-integer mm/text to-integer aaaa/text   
+    do [idade/text: to string! etariar to integer! dd/text to integer! mm/text to integer! aaaa/text]
     return
     across
     text "DDD"
