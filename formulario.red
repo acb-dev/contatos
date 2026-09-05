@@ -9,7 +9,7 @@ etariar: func [
                 anoAtual: now/year
                 mesAtual: now/month
                 
-                (aaaa - anoAtual) + 10                
+                anoAtual - aaaa              
 ]
 idadizar: [2 + 198]
 codificar: [to string! now/time ]

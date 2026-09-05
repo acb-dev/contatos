@@ -44,16 +44,19 @@ view/flags [
     text "Nome"
     nome: field 400    
     text "Nascimento(dd/mm/aaaa)"   
-    dd: field 20
+    dd: field 20 "00"
     text 10 "/"
-    mm: field 20
+    mm: field 20 "00"
     text 10 "/"
-    aaaa: field 40
+    aaaa: field 40 "0000"
     text 30 "Idade"    
-    idade: text 20 ""
+    idade: text 30 ""
     ;do [idade/text: to string! do idadizar[] ] 
-    ;idade/text: etariar to-integer dd/text to-integer mm/text to-integer aaaa/text   
-    do [idade/text: to string! etariar to integer! dd/text to integer! mm/text to integer! aaaa/text]
+	;do [anoPreenchido:  aaaa/text]
+	;if (to-integer dd/text > 0) and (to-integer mm/text > 0) and (to-integer aaaa/text > 0)   [
+    ;idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text
+	;] 
+    do [idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text]
     return
     across
     text "DDD"
