@@ -24,14 +24,15 @@ view/flags [
     button "Primeiro" [quit]    
     button "Anterior" [quit]
     button "Próximo" [quit]
-    button "Último" [quit]  
+    button "Último" [quit] 
+    button "Excluir" [quit] 
     button "Imprimir" [quit]
     button "Listar" [quit]
     button "Sair" [quit] 
     return
     below            
     h5 "Cadastre o contato"
-    across
+    across   
     text "Chave Primaria"
     chavePrimaria: text 185 ""
     do [chavePrimaria/text: to string! now/precise] 
@@ -39,53 +40,43 @@ view/flags [
     codigo: field 100
     do [codigo/text: do codificar[]]
     text 45 "Apelido"
-    apelido: field 300
+    apelido: field 300 on-enter [set-focus nome]
     return   
     text "Nome"
-    nome: field 400    
+    nome: field 400  on-enter [set-focus dd]  
     text "Nascimento(dd/mm/aaaa)"   
-    dd: field 20
+    dd: field 20 on-enter [set-focus mm]
     text 10 "/"
-    mm: field 20
+    mm: field 20 on-enter [set-focus aaaa]
     text 10 "/"
     aaaa: field 40
-    on-unfocus [aaaa/text: idade/text: aaaa/text ]
-
-
-    ;aaaa/actors/on-unfocus: func [aaaa on-unfocus] [idade/text: aaaa/text]
-    ;aaaa/actors/on-unfocus: idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text
-    text 30 "Idade"    
-    idade: text 30 ""
-    
-    ;do [idade/text: to string! do idadizar[] ] 
-	;do [anoPreenchido:  aaaa/text]
-	;if (to-integer dd/text > 0) and (to-integer mm/text > 0) and (to-integer aaaa/text > 0)   [
-    ;idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text
-	;] 
-    ;do [idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text]
+    on-enter [aaaa/text: idade/text: aaaa/text set-focus ddd]   
+    on-unfocus [aaaa/text: idade/text: aaaa/text]
+    text 30 "Idade"   
+    idade: text 30 "" 
     return
     across
     text "DDD"
-    ddd: field 30
+    ddd: field 30 on-enter [set-focus telefone1]
     text 45 "Telefone"    
-    telefone1: field 45 "9"
+    telefone1: field 45 "9" on-enter [set-focus telefone2]
     text 10 "-"
-    telefone2: field 45   
+    telefone2: field 45 on-enter [set-focus email]  
     text 30 "Email"
-    email: field 400
+    email: field 400 on-enter [set-focus rua]
     return
     text "Rua"
-    rua: field 400
+    rua: field 400 on-enter [set-focus numero]
     text 20 "n°"
-    numero: field 60
+    numero: field 60 on-enter [set-focus complemento]
     return
     text "Complemento" 
-    complemento: field 120
+    complemento: field 120 on-enter [set-focus bairro]
     text 35 "Bairro" 
-    bairro: field 200
+    bairro: field 200 on-enter [set-focus cidade]
     return
     text "Cidade"
-    cidade: field 200
+    cidade: field 200 on-enter [set-focus uf]
     text 20 "UF"
     uf: drop-down data[
         "Acre (AC)"
@@ -116,6 +107,7 @@ view/flags [
         "Sergipe (SE)"
         "Tocantins (TO)" 
     ]
+    on-enter [set-focus observacao]
     return
     text "Observação"
     observacao: area white 600x150
