@@ -44,19 +44,25 @@ view/flags [
     text "Nome"
     nome: field 400    
     text "Nascimento(dd/mm/aaaa)"   
-    dd: field 20 "00"
+    dd: field 20
     text 10 "/"
-    mm: field 20 "00"
+    mm: field 20
     text 10 "/"
-    aaaa: field 40 "0000"
+    aaaa: field 40
+    on-unfocus [aaaa/text: idade/text: aaaa/text ]
+
+
+    ;aaaa/actors/on-unfocus: func [aaaa on-unfocus] [idade/text: aaaa/text]
+    ;aaaa/actors/on-unfocus: idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text
     text 30 "Idade"    
     idade: text 30 ""
+    
     ;do [idade/text: to string! do idadizar[] ] 
 	;do [anoPreenchido:  aaaa/text]
 	;if (to-integer dd/text > 0) and (to-integer mm/text > 0) and (to-integer aaaa/text > 0)   [
     ;idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text
 	;] 
-    do [idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text]
+    ;do [idade/text: to string! etariar to-integer dd/text  to-integer mm/text to-integer aaaa/text]
     return
     across
     text "DDD"
