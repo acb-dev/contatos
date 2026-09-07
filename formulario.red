@@ -1,6 +1,6 @@
 Red []
 
-etariar: func [
+etarizar: func [
                 dd 
                 mm 
                 aaaa 

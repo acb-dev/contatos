@@ -50,8 +50,11 @@ view/flags [
     mm: field 20 on-enter [set-focus aaaa]
     text 10 "/"
     aaaa: field 40
-    on-enter [aaaa/text: idade/text: aaaa/text set-focus ddd]   
-    on-unfocus [aaaa/text: idade/text: aaaa/text]
+        on-enter [
+        idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
+        set-focus ddd
+        ]
+    on-unfocus [idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text]
     text 30 "Idade"   
     idade: text 30 "" 
     return
