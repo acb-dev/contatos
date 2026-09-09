@@ -56,7 +56,8 @@ view/flags [
         ]
     on-unfocus [idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text]
     text 30 "Idade"   
-    idade: text 30 "" 
+    idade: text 18 "" 
+	text 25 "anos"
     return
     across
     text "DDD"
