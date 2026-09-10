@@ -52,12 +52,15 @@ view/flags [
     aaaa: field 40
         on-enter [
         idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
+        anos/text: " anos"
         set-focus ddd
         ]
-    on-unfocus [idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text]
+    on-unfocus [idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
+                anos/text: " anos"
+    ]
     text 30 "Idade"   
     idade: text 18 "" 
-	text 25 "anos"
+	anos: text 30 ""
     return
     across
     text "DDD"
