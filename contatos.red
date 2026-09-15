@@ -30,20 +30,20 @@ view/flags [
     button "Listar" [quit]
     button "Sair" [quit] 
     return
-    below            
+    below        
     h5 "Cadastre o contato"
     foto: image 100x100 %fotos\foto.jpg
     across
     return
     text "Chave Primaria"
     chavePrimaria: text 185 ""
-    do [chavePrimaria/text: to string! now/precise]    
+    do [chavePrimaria/text: do chavear]  
+    ;do [chavePrimaria/text: to string! now/precise]    
     text 45 "Código"
     codigo: field 100
-    do [codigo/text: do codificar[]]
+    do [codigo/text: do codificar]
     text 45 "Apelido"
     apelido: field 300 on-enter [set-focus nome]
-    across
     space 3X10
     return   
     text "Nome"
