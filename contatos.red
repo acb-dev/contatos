@@ -4,7 +4,7 @@ Red [
     Date:    24-Aug-2026
     File:    %contatos.red
     Version: 0.1.0
-    Icon: %\midia\contatos.ico
+    Icon: %contatos.ico
     Needs:   'View
 ]
 
@@ -32,15 +32,19 @@ view/flags [
     return
     below            
     h5 "Cadastre o contato"
-    across   
+    foto: image 100x100 %fotos\foto.jpg
+    across
+    return
     text "Chave Primaria"
     chavePrimaria: text 185 ""
-    do [chavePrimaria/text: to string! now/precise] 
+    do [chavePrimaria/text: to string! now/precise]    
     text 45 "Código"
     codigo: field 100
     do [codigo/text: do codificar[]]
     text 45 "Apelido"
     apelido: field 300 on-enter [set-focus nome]
+    across
+    space 3X10
     return   
     text "Nome"
     nome: field 400  on-enter [set-focus dd]  
@@ -65,10 +69,11 @@ view/flags [
     across
     text "DDD"
     ddd: field 30 on-enter [set-focus telefone1]
-    text 45 "Telefone"    
-    telefone1: field 45 "9" on-enter [set-focus telefone2]
+    text 45 "Telefone"
+    text 6 "9"
+    telefone1: field 40 on-enter [set-focus telefone2]
     text 10 "-"
-    telefone2: field 45 on-enter [set-focus email]  
+    telefone2: field 40 on-enter [set-focus email]  
     text 30 "Email"
     email: field 400 on-enter [set-focus rua]
     return
