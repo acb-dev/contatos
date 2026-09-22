@@ -37,8 +37,7 @@ view/flags [
     return
     text "Chave Primaria"
     chavePrimaria: text 185 ""
-    do [chavePrimaria/text: do chavear]  
-    ;do [chavePrimaria/text: to string! now/precise]    
+    do [chavePrimaria/text: do chavear]      
     text 45 "Código"
     codigo: field 100
     do [codigo/text: do codificar]
@@ -127,7 +126,7 @@ view/flags [
     text ""
     return
     rich-text 400x20 "Desenvolvido por Alexandre Barbosa +55 31 9.98792-4184" with [
-        data: [17x17 bold]
+        data: [17x17 bold red]
     ]    
     ]
     [resize]   

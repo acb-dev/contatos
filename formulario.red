@@ -17,8 +17,7 @@ chavear: [
     replace chave "Sep" "09"
     replace chave "Oct" "10"
     replace chave "Nov" "11"
-    replace chave "Dec" "12"
-    
+    replace chave "Dec" "12"    
 ]
 
 etarizar: func [
@@ -33,4 +32,6 @@ etarizar: func [
                 return (anoAtual - aaaa)           
 ]
 idadizar: [2 + 198]
-codificar: [to string! now/time ]
+codificar: [
+replace/all to-string now/time  ":" ""
+]
