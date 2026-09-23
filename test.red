@@ -1,6 +1,6 @@
-Red []
+Red [ ]
 
-chavear: [
+[
     chave: to-string now/precise
     replace/all chave "-" ""
     replace/all chave "/" ""
@@ -17,22 +17,7 @@ chavear: [
     replace chave "Sep" "09"
     replace chave "Oct" "10"
     replace chave "Nov" "11"
-    replace chave "Dec" "12"
-	take/part chave 19
-]
-
-etarizar: func [
-                dd 
-                mm 
-                aaaa 
-               ] 
-               [
-                anoAtual: now/year
-                mesAtual: now/month
-                
-                return (anoAtual - aaaa)           
-]
-idadizar: [2 + 198]
-codificar: [
-replace/all to-string now/time  ":" ""
+    replace chave "Dec" "12" 
+	retorno: clear skip to-string chave 20
+	print retorno
 ]
