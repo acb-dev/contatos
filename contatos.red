@@ -125,8 +125,8 @@ view/flags [
     space 5x5
     text ""
     return
-    ;rich-text 400x20 "Desenvolvido por Alexandre Barbosa +55 31 9.98792-4184" with [
-    ;data: [17x17 bold red]
-    ;]    
+    rich-text 400x20 "Desenvolvido por Alexandre Barbosa +55 31 9.98792-4184" with [
+    data: [17x18 bold 255.0.0] 
+    ]    
     ]
     [resize]   
