@@ -12,7 +12,7 @@ do %formulario.red
 
 view/flags [    
     title "Contatos"
-    size 900x600
+    size 950x520
     space 3x3
     below
     text ""    
@@ -30,34 +30,33 @@ view/flags [
     button "Listar" [quit]
     button "Sair" [quit] 
     return
-    below        
     h5 "Cadastre o contato"
-    foto: image 100x100 %fotos\foto.jpg
-    across
     return
-    text "Chave Primaria"
-    chavePrimaria: text 185 ""
+    foto: image 100x100 %fotos\foto.jpg
+    origin 160x90
+    text middle "Chave Primaria"
+    chavePrimaria: text middle 185 ""
     do [chavePrimaria/text: do chavear]      
-    text 45 "Código"
+    text middle 45 "Código"
     codigo: field 100
     do [codigo/text: do codificar]
-    text 45 "Apelido"
+    text middle 45 "Apelido"
     apelido: field 300 on-enter [set-focus nome]
+    return
     space 3X10
-    return   
-    text "Nome"
+    text middle "Nome"
     nome: field 400  on-enter [set-focus dd]
-    text "Sexo"
+    text middle "Sexo"
     sexo: panel [
     masculino: radio "Masculino"
     feminino:  radio "Feminino"
     ]
     return
-    text "Nascimento(dd/mm/aaaa)"   
+    text middle "Nascimento(dd/mm/aaaa)"
     dd: field 20 on-enter [set-focus mm]
-    text 10 "/"
+    text middle 10 "/"
     mm: field 20 on-enter [set-focus aaaa]
-    text 10 "/"
+    text middle 10 "/"
     aaaa: field 40
         on-enter [
         idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
@@ -67,34 +66,34 @@ view/flags [
     on-unfocus [idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
                 anos/text: " anos"
     ]
-    text 30 "Idade"   
-    idade: text 18 "" 
-	anos: text 30 ""
+    text middle 30 "Idade"
+    idade: text middle 18 ""
+	anos: text middle 30 ""
     return
     across
-    text "DDD"
+    text middle "DDD"
     ddd: field 30 on-enter [set-focus telefone1]
-    text 45 "Telefone"
-    text 6 "9"
+    text middle 45 "Telefone"
+    text middle 6 "9"
     telefone1: field 40 on-enter [set-focus telefone2]
-    text 10 "-"
+    text middle 10 "-"
     telefone2: field 40 on-enter [set-focus email]  
-    text 30 "Email"
+    text middle 30 "Email"
     email: field 400 on-enter [set-focus rua]
     return
-    text "Rua"
+    text middle "Logradouro"
     rua: field 400 on-enter [set-focus numero]
-    text 20 "n°"
+    text middle 20 "n°"
     numero: field 60 on-enter [set-focus complemento]
     return
-    text "Complemento" 
-    complemento: field 120 on-enter [set-focus bairro]
-    text 35 "Bairro" 
+    text middle "Complemento"
+    complemento: field 180 on-enter [set-focus bairro]
+    text middle 35 "Bairro"
     bairro: field 200 on-enter [set-focus cidade]
     return
-    text "Cidade"
+    text middle "Cidade"
     cidade: field 200 on-enter [set-focus uf]
-    text 20 "UF"
+    text middle 20 "UF"
     uf: drop-down data[
         "Acre (AC)"
         "Alagoas (AL)"
@@ -126,15 +125,15 @@ view/flags [
     ]
     on-enter [set-focus observacao]
     return
-    text "Observação"
+    text middle "Observação"
     observacao: area white 600x150
     space 5x5
     text ""
     return
-    rich-text 400x20 "Desenvolvido por Alexandre Barbosa +55 31 9.8792-4184 acbdev.dev.br" with [
+    rich-text middle 400x20 "Desenvolvido por Alexandre Barbosa +55 31 9.8792-4184 acbdev.dev.br" with [
     data: [17x18 bold 255.0.0]   
     ]
-    text "acbdev.dev.br" 
+    text middle "acbdev.dev.br"
         on-click [browser https://www.acbdev.dev.br]       
     ]
     [resize]   
