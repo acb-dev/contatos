@@ -130,10 +130,14 @@ view/flags [
     space 5x5
     text ""
     return
-    rich-text middle 400x20 "Desenvolvido por Alexandre Barbosa +55 31 9.8792-4184 acbdev.dev.br" with [
+    rich-text middle 320x20 "Desenvolvido por Alexandre Barbosa +55 31 9.8792-4184" with [
     data: [17x18 bold 255.0.0]   
     ]
-    text middle "acbdev.dev.br"
-        on-click [browser https://www.acbdev.dev.br]       
+     button        
+        underline
+        font [color: blue]  
+        "www.acbdev.dev.br"
+        [browse https://www.acbdev.dev.br]           
     ]
+	
     [resize]   
