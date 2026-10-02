@@ -33,6 +33,8 @@ view/flags [
     h5 "Cadastre o contato"
     return
     foto: image 100x100 %fotos\foto.jpg
+    at 30x200
+    button "Foto" [quit]
     origin 160x90
     text middle "Chave Primaria"
     chavePrimaria: text middle 185 ""
