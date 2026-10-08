@@ -78,7 +78,7 @@ view/flags [
     text middle 45 "Telefone"
     text middle 6 "9"
     telefone1: field 40 on-enter [set-focus telefone2]
-    text middle 10 "-"
+    text middle 6 "-"
     telefone2: field 40 on-enter [set-focus email]  
     text middle 30 "Email"
     email: field 400 on-enter [set-focus rua]
@@ -126,6 +126,10 @@ view/flags [
         "Tocantins (TO)" 
     ]
     on-enter [set-focus observacao]
+    text middle 30 "CEP"
+    cep1: field 42  on-enter [set-focus cep2]
+    text middle 6 "-"
+    cep2: field 30  on-enter [set-focus observacao]
     return
     text middle "Observação"
     observacao: area white 600x150
