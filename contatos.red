@@ -10,7 +10,9 @@ Red [
 
 do %formulario.red
 
-view/flags [    
+
+
+formulario: layout [    
     title "Contatos"
     size 950x520
     space 3x3
@@ -147,3 +149,20 @@ view/flags [
     ]
 	
     [resize]   
+
+    formulario/menu: [
+        "Contato" [
+            "Opção 1" sair
+            ---
+            "Opção 2" encerrar
+        ]
+    ]
+
+    
+    formulario/actors: make object! [
+        on-menu: func [face [object!] event [event!]][
+            if event/picked = 'sair     [quit]
+            if event/picked = 'encerrar [quit]       
+    ]]   
+
+view formulario
