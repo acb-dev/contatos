@@ -18,7 +18,7 @@ chavear: [
     replace chave "Oct" "10"
     replace chave "Nov" "11"
     replace chave "Dec" "12"
-	take/part chave 19
+	take/part chave 16
 ]
 
 etarizar: func [
