@@ -1,0 +1,16 @@
+
+-=== Red Compiler 0.6.6 ===- 
+
+Compiling J:\Workspace\RedSpace\contatos\contatos.red ...
+...compilation time : 2433 ms
+
+Target: Windows 
+
+Compiling to native code...
+...compilation time : 88633 ms
+...global words     : 23846 (72.49%)
+...linking time     : 409 ms
+...output file size : 1471488 bytes
+...output file      : J:\Workspace\RedSpace\contatos\contatos.exe 
+
+

@@ -1,12 +1,4 @@
-Red [
-    Title:   "Contatos"
-    Author:  "Alexandre Barbosa"
-    Date:    24-Aug-2026
-    File:    %janelas.red
-    Version: 0.1.0
-    Icon: %contatos.ico
-    Needs:   'View
-]
+Red [ ]
 
 formulario: layout [
     title "Contatos"
@@ -175,3 +167,5 @@ formulario: layout [
                 if event/picked = 'sair     [quit]
                 if event/picked = 'encerrar [quit]
         ]]
+
+view formulario

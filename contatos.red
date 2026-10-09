@@ -9,6 +9,5 @@ Red [
 ]
 
 do %util.red
-do %janelas.red
 
-view formulario
+do %janelas.red
