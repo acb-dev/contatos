@@ -155,11 +155,26 @@ formulario: layout [
     [resize]
 
     formulario/menu: [
-        "Contato" [
-            "Opção 1" sair
-            ---
-            "Opção 2" encerrar
+        "Gerenciar" [
+            "Novo"       novo
+            "Editar"     encerrar
+			"Gravar"     gravar
+			---
+			---
+			"Excluir"    excluir
         ]
+		"Navegar" [
+			"Primeiro"   primeiro
+			"Anterior"   anterior
+			"Proximo"    proximo
+			"Último"     ultimo 
+			"Procurar"   procurar
+		]
+		"Relatórios" [
+			"Imprimir"   imprimir
+			"Listar"     listar
+		]
+		"Sair" sair
     ]
 
      formulario/actors: make object! [
