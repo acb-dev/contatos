@@ -157,7 +157,7 @@ formulario: layout [
     formulario/menu: [
         "Gerenciar" [
             "Novo"       novo
-            "Editar"     encerrar
+            "Editar"     editar
 			"Gravar"     gravar
 			---
 			---
@@ -180,7 +180,16 @@ formulario: layout [
      formulario/actors: make object! [
             on-menu: func [face [object!] event [event!]][
                 if event/picked = 'sair     [quit]
-                if event/picked = 'encerrar [quit]
+                if event/picked = 'editar   [quit]
+				if event/picked = 'gravar   [quit]
+				if event/picked = 'excluir  [quit]
+				if event/picked = 'primeiro [quit]
+				if event/picked = 'anterior [quit]
+				if event/picked = 'proximo  [quit]
+				if event/picked = 'ultimo   [quit]
+				if event/picked = 'procurar [quit]
+				if event/picked = 'imprimir [quit]
+				if event/picked = 'listar   [quit]
         ]]
 
 view formulario
