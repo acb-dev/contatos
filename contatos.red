@@ -8,6 +8,9 @@ Red [
     Needs:   'View
 ]
 
+
 do %util.red
 
 do %formulario.red
+
+do %crud.red
