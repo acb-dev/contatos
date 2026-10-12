@@ -181,7 +181,7 @@ formulario: layout [
             on-menu: func [face [object!] event [event!]][
                 if event/picked = 'sair     [quit]
                 if event/picked = 'editar   [quit]
-				if event/picked = 'gravar   [quit]
+				if event/picked = 'gravar   [gravar]
 				if event/picked = 'excluir  [quit]
 				if event/picked = 'primeiro [quit]
 				if event/picked = 'anterior [quit]
