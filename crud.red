@@ -47,8 +47,6 @@ gravar: does
            ";"
            obs1/text
 		   ";"
-           obs1/text
-		   ";"
            obs2/text
 		   ";"
            obs3/text
