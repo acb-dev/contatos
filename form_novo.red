@@ -138,14 +138,36 @@ formulario: layout [
     text middle "Observação"
 	space 0x0
 	return
-    obs1: field 650 no-border on-enter [set-focus obs2]
+    obs1: field 650 no-border
+		on-enter [set-focus obs2]
 		on-key-down [if event/key = 'down [set-focus obs2]]
 	return
-	obs2: field 650 no-border on-enter [set-focus obs3] on-down [set-focus obs3] on-up [set-focus obs1]
+	obs2: field 650 no-border
+		on-enter [set-focus obs3]
+		on-key-down [
+			case [
+				event/key = 'down [set-focus obs3]
+				event/key = 'up   [set-focus obs1]
+			]
+		]	
 	return
-	obs3: field 650 no-border on-enter [set-focus obs4] on-down [set-focus obs4] on-up [set-focus obs2]
+	obs3: field 650 no-border
+		on-enter [set-focus obs4]
+		on-key-down [
+			case [
+				event/key = 'down [set-focus obs4]
+				event/key = 'up   [set-focus obs2]
+			]
+		]		
 	return
-	obs4: field 650 no-border on-enter [set-focus obs5] on-down [set-focus obs5] on-up [set-focus obs3]
+	obs4: field 650 no-border
+		on-enter [set-focus obs5]
+		on-key-down [
+			case [
+				event/key = 'down [set-focus obs5]
+				event/key = 'up   [set-focus obs3]
+			]
+		]			
 	return
 	obs5: field 650 no-border
 		on-key-down [if event/key = 'up [set-focus obs4]]
