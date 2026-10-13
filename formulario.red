@@ -71,7 +71,7 @@ formulario: layout [
     text middle 6 "-"
     telefone2: field 40 on-enter [set-focus email]
     text middle 30 "Email"
-    email: field 400 on-enter [set-focus rua]
+    email: field 400 on-enter [set-focus tipo]
     return
     text middle 24 "Tipo"
      tipo: drop-down 90 data[
@@ -131,14 +131,24 @@ formulario: layout [
         "Sergipe (SE)"
         "Tocantins (TO)"
     ]
-    on-enter [set-focus observacao]
+    on-enter [set-focus cep1]
     text middle 30 "CEP"
     cep1: field 42  on-enter [set-focus cep2]
     text middle 6 "-"
-    cep2: field 30  on-enter [set-focus observacao]
+    cep2: field 30  on-enter [set-focus obs1]
     return
     text middle "Observação"
-    observacao: area white 685x150
+	space 0x0
+	return
+    obs1: field 650 no-border on-enter [set-focus obs2]
+	return
+	obs2: field 650 no-border on-enter [set-focus obs3]
+	return
+	obs3: field 650 no-border on-enter [set-focus obs4]
+	return
+	obs4: field 650 no-border on-enter [set-focus obs5]
+	return
+	obs5: field 650 no-border
     space 5x5
     text ""
     return

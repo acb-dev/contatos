@@ -45,8 +45,17 @@ gravar: does
            ";"
            cep2/text
            ";"
-           observacao/text
-
+           obs1/text
+		   ";"
+           obs1/text
+		   ";"
+           obs2/text
+		   ";"
+           obs3/text
+		   ";"
+           obs4/text
+		   ";"
+           obs5/text
         ]
 ]
 
