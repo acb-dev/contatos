@@ -37,10 +37,8 @@ formulario: layout [
     text middle "Nome"
     nome: field 400  on-enter [set-focus dd]
     text middle "Sexo"
-    sexo: panel [
     masculino: radio "Masculino"
     feminino:  radio "Feminino"
-    ]
     return
     text middle "Nascimento(dd/mm/aaaa)"
     dd: field 20 on-enter [set-focus mm]
