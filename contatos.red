@@ -13,4 +13,4 @@ do %autopreenchimento.red
 
 do %crud.red
 
-do %formulario.red
+do %form_novo.red

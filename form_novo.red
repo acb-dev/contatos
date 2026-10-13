@@ -5,7 +5,7 @@ formulario: layout [
     size 950x520
     space 3x3
     below
-    text ""
+    h5 "Cadastre o novo contato"
     across
     button "Novo" [quit]
     button "Procurar" [quit]
@@ -18,9 +18,7 @@ formulario: layout [
     button "Excluir" [quit]
     button "Imprimir" [quit]
     button "Listar" [quit]
-    button "Sair" [quit]
-    return
-    h5 "Cadastre o contato"
+    button "Sair" [quit]    
     return
     foto: image 100x100 %fotos\foto.jpg
     at 30x200
@@ -141,14 +139,16 @@ formulario: layout [
 	space 0x0
 	return
     obs1: field 650 no-border on-enter [set-focus obs2]
+		on-key-down [if event/key = 'down [set-focus obs2]]
 	return
-	obs2: field 650 no-border on-enter [set-focus obs3]
+	obs2: field 650 no-border on-enter [set-focus obs3] on-down [set-focus obs3] on-up [set-focus obs1]
 	return
-	obs3: field 650 no-border on-enter [set-focus obs4]
+	obs3: field 650 no-border on-enter [set-focus obs4] on-down [set-focus obs4] on-up [set-focus obs2]
 	return
-	obs4: field 650 no-border on-enter [set-focus obs5]
+	obs4: field 650 no-border on-enter [set-focus obs5] on-down [set-focus obs5] on-up [set-focus obs3]
 	return
 	obs5: field 650 no-border
+		on-key-down [if event/key = 'up [set-focus obs4]]
     space 5x5
     text ""
     return
