@@ -2,6 +2,10 @@ Red [ ]
 
 gravar: does
 [
+		sexo:   case [
+					masculino/data = true "M"
+					feminino/data  = true "F"
+				]
 
       write/lines/append %contatos.csv
         rejoin [
@@ -12,6 +16,8 @@ gravar: does
            apelido/text
            ";"
            nome/text
+           ";"
+		   sexo
            ";"
            dd/text
            ";"

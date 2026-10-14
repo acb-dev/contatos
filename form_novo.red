@@ -180,10 +180,8 @@ formulario: layout [
         font [color: blue]
         "www.acbdev.dev.br"
         [browse https://www.acbdev.dev.br]
-    ]
-
-    [resize]
-
+]   
+	
     formulario/menu: [
         "Gerenciar" [
             "Novo"       novo
@@ -206,7 +204,7 @@ formulario: layout [
 		]
 		"Sair" sair
     ]
-
+	
      formulario/actors: make object! [
             on-menu: func [face [object!] event [event!]][
                 if event/picked = 'sair     [quit]
@@ -221,5 +219,7 @@ formulario: layout [
 				if event/picked = 'imprimir [quit]
 				if event/picked = 'listar   [quit]
         ]]
+
+
 
 view formulario
