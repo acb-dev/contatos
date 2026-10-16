@@ -7,7 +7,7 @@ formulario: layout [
     below
     h5 "Cadastre o novo contato"
     across
-    button "Novo" [quit]
+    button "Novo" [novo]
     button "Procurar" [quit]
     button "Editar" [quit]
     button "Gravar" [gravar]
@@ -207,7 +207,7 @@ formulario: layout [
 	
      formulario/actors: make object! [
             on-menu: func [face [object!] event [event!]][
-                if event/picked = 'sair     [quit]
+                if event/picked = 'novo     [novo]
                 if event/picked = 'editar   [quit]
 				if event/picked = 'gravar   [gravar]
 				if event/picked = 'excluir  [quit]
@@ -220,6 +220,4 @@ formulario: layout [
 				if event/picked = 'listar   [quit]
         ]]
 
-
-
-view formulario
+view/flags formulario [resize]
