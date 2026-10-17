@@ -28,8 +28,9 @@ formulario: layout [
     chavePrimaria: text middle 185 ""
     do [chavePrimaria/text: do chavear]
     text middle 45 "Código"
-    codigo: field 100
+    codigo: field 100	
     do [codigo/text: do codificar]
+	do [codigo/enabled?: false]	
     text middle 45 "Apelido"
     apelido: field 300 on-enter [set-focus nome]
     return

@@ -63,8 +63,8 @@ gravar: does
         ]
 ]
 
-novo:
-[
-    novoRegistro: true
-
-]
+novo: does
+	[
+		novoRegistro: true
+		codigo/enabled?: true
+	]
