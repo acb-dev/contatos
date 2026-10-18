@@ -2,6 +2,10 @@ Red [ ]
 
 gravar: does
 [
+
+		;preNomeArquivo: nome/text
+		;nomeArquivo rejoin ["%reg\"preNomeArquivo".reg"]
+
 		sexo:   case [
 					masculino/data = true "M"
 					feminino/data  = true "F"
@@ -62,14 +66,11 @@ gravar: does
 			   ";"
 			   obs5/text
 			]
-				
-		 case [
-					novoRegistro = true  [write/lines/append %contatos.csv registro]
-					novoRegistro = false [write %contatos.csv registro]
-				]
-				
-		novoRegistro: false			
- ]
+
+		prin nomeArquivo
+
+		save %reg\nome\text.reg registro
+]
 
 novo: does
 	[
