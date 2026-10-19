@@ -48,5 +48,59 @@ novo: does
 	[		
 		titulo/text: "Cadastre o novo contato"
 		chavePrimaria/text: do chavear
-		apelido/enabled?: true		
+		do habilitar
 	]
+
+habilitar: does
+[ 	 		   
+	apelido/enabled?: true			   
+	nome/enabled?: true 
+	dd/enabled?: true
+	mm/enabled?: true
+	aaaa/enabled?: true
+	ddd/enabled?: true
+	telefone1/enabled?: true
+	telefone2/enabled?: true
+	email/enabled?: true
+	tipo/enabled?: true
+	rua/enabled?: true
+	numero/enabled?: true
+	complemento/enabled?: true
+	bairro/enabled?: true
+	cidade/enabled?: true
+	uf/enabled?: true
+	cep1/enabled?: true
+	cep2/enabled?: true
+	obs1/enabled?: true
+	obs2/enabled?: true
+	obs3/enabled?: true
+	obs4/enabled?: true
+	obs5/enabled?: true
+]
+
+desabilitar: does
+[ 	 		   
+	apelido/enabled?: false			   
+	nome/enabled?: false 
+	dd/enabled?: false
+	mm/enabled?: false
+	aaaa/enabled?: false
+	ddd/enabled?: false
+	telefone1/enabled?: false
+	telefone2/enabled?: false
+	email/enabled?: false
+	tipo/enabled?: false
+	rua/enabled?: false
+	numero/enabled?: false
+	complemento/enabled?: false
+	bairro/enabled?: false
+	cidade/enabled?: false
+	uf/enabled?: false
+	cep1/enabled?: false
+	cep2/enabled?: false
+	obs1/enabled?: false
+	obs2/enabled?: false
+	obs3/enabled?: false
+	obs4/enabled?: false
+	obs5/enabled?: false
+]

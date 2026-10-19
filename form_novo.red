@@ -2,7 +2,7 @@ Red [ ]
 
 formulario: layout [
     title "Contatos"
-    size 950x520
+    size 980x520
     space 3x3
     below
     titulo: h5 middle 900 "Cadastro de Contatos"
@@ -26,15 +26,9 @@ formulario: layout [
     button "Foto" [quit]
     origin 160x90
     text middle "Chave Primaria"
-    chavePrimaria: text middle 185 ""
-    ;do [chavePrimaria/text: do chavear]
-    ;text middle 45 "Código"
-    ;codigo: field 100 
-    ;do [codigo/text: do codificar]
-	;do [codigo/enabled?: false]	
+    chavePrimaria: text middle 185 ""    
     text middle 45 "Apelido"
-    apelido: field 300 on-enter [set-focus nome]
-	do [apelido/enabled?: false]
+    apelido: field 300 on-enter [set-focus nome]	
     return
     space 3X10
     text middle "Nome"
@@ -52,7 +46,7 @@ formulario: layout [
         on-enter [
         idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
         anos/text: " anos"
-        set-focus ddd
+        set-focus naturalidade
         ]
     on-unfocus [idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
                 anos/text: " anos"
@@ -60,9 +54,42 @@ formulario: layout [
     text middle 30 "Idade"
     idade: text middle 18 ""
 	anos: text middle 30 ""
+	text middle "Naturalidade"
+	naturalidade: field 200 on-enter [set-focus ufn]
+    text middle 20 "UF"
+    ufn: drop-down data[
+        "Acre (AC)"
+        "Alagoas (AL)"
+        "Amapá (AP)"
+        "Amazonas (AM)"
+        "Bahia (BA)"
+        "Ceará (CE)"
+        "Distrito Federal (DF)"
+        "Espírito Santo (ES)"
+        "Goiás (GO)"
+        "Maranhão (MA)"
+        "Mato Grosso (MT)"
+        "Mato Grosso do Sul (MS)"
+        "Minas Gerais (MG)"
+        "Pará (PA)"
+        "Paraíba (PB)"
+        "Paraná (PR)"
+        "Pernambuco (PE)"
+        "Piauí (PI)"
+        "Rio de Janeiro (RJ)"
+        "Rio Grande do Norte (RN)"
+        "Rio Grande do Sul (RS)"
+        "Rondônia (RO)"
+        "Roraima (RR)"
+        "Santa Catarina (SC)"
+        "São Paulo (SP)"
+        "Sergipe (SE)"
+        "Tocantins (TO)"
+    ]
+    on-enter [set-focus ddd]
     return
     across
-    text middle "DDD"
+    text middle 25 "DDD"
     ddd: field 30 on-enter [set-focus telefone1]
     text middle 45 "Telefone"
     text middle 6 "9"
@@ -178,6 +205,9 @@ formulario: layout [
     rich-text middle 320x20 "Desenvolvido por Alexandre Barbosa +55 31 9.8792-4184" with [
     data: [17x18 bold 255.0.0]
     ]
+	
+	do [desabilitar]
+	
      button
         underline
         font [color: blue]
