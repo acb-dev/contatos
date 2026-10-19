@@ -3,8 +3,8 @@ Red [ ]
 gravar: does
 [
 
-		;preNomeArquivo: nome/text
-		;nomeArquivo rejoin ["%reg\"preNomeArquivo".reg"]
+		
+		nomeArquivo: rejoin ["reg\"nome/text".ficha"]
 
 		sexo:   case [
 					masculino/data = true "M"
@@ -67,9 +67,7 @@ gravar: does
 			   obs5/text
 			]
 
-		prin nomeArquivo
-
-		save %reg\nome\text.reg registro
+		save to-file nomeArquivo registro
 ]
 
 novo: does
