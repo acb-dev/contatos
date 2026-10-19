@@ -1,5 +1,14 @@
 Red []
 
+numerar: [
+	aux1: load %cfg\ordem.cfg
+	aux2: to-integer aux1
+	ordem: aux2 + 1
+]
+
+
+
+
 chavear: [
     chave: to-string now/precise
     replace/all chave "-" ""

@@ -25,6 +25,8 @@ formulario: layout [
     at 30x200
     button "Foto" [quit]
     origin 160x90
+	text middle "Nº"
+	numRegistro: text ""
     text middle "Chave Primaria"
     chavePrimaria: text middle 185 ""    
     text middle 45 "Apelido"

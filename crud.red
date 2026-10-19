@@ -14,6 +14,7 @@ gravar: does
 		registro: reduce
 		
 			[
+			   numRegistro/text
 			   chavePrimaria/text	  	 		   
 			   apelido/text			   
 			   nome/text
@@ -21,6 +22,8 @@ gravar: does
 			   dd/text
 			   mm/text
 			   aaaa/text
+			   naturalidade/text
+			   ufn/text
 			   ddd/text
 			   telefone1/text
 			   telefone2/text
@@ -40,12 +43,14 @@ gravar: does
 			   obs4/text
 			   obs5/text
 			]
-
+		
+		save %cfg\ordem.cfg reduce[numRegistro/text]
 		save to-file nomeArquivo registro
 ]
 
 novo: does
 	[		
+		numRegistro/text: to-string do numerar
 		titulo/text: "Cadastre o novo contato"
 		chavePrimaria/text: do chavear
 		do habilitar
@@ -55,9 +60,13 @@ habilitar: does
 [ 	 		   
 	apelido/enabled?: true			   
 	nome/enabled?: true 
+	masculino/enabled?: true
+	feminino/enabled?: true
 	dd/enabled?: true
 	mm/enabled?: true
 	aaaa/enabled?: true
+	naturalidade/enabled?: true
+	ufn/enabled?: true
 	ddd/enabled?: true
 	telefone1/enabled?: true
 	telefone2/enabled?: true
@@ -82,9 +91,13 @@ desabilitar: does
 [ 	 		   
 	apelido/enabled?: false			   
 	nome/enabled?: false 
+	masculino/enabled?: false
+	feminino/enabled?: false
 	dd/enabled?: false
 	mm/enabled?: false
 	aaaa/enabled?: false
+	naturalidade/enabled?: false
+	ufn/enabled?: false
 	ddd/enabled?: false
 	telefone1/enabled?: false
 	telefone2/enabled?: false
