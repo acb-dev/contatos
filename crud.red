@@ -11,59 +11,33 @@ gravar: does
 					feminino/data  = true "F"
 				]
 				
-		registro: 
+		registro: reduce
 		
-			 rejoin [
-			   chavePrimaria/text
-			   ";"
-			   codigo/text
-			   ";"
-			   apelido/text
-			   ";"
+			[
+			   chavePrimaria/text	  	 		   
+			   apelido/text			   
 			   nome/text
-			   ";"
 			   sexo
-			   ";"
 			   dd/text
-			   ";"
 			   mm/text
-			   ";"
 			   aaaa/text
-			   ";"
 			   ddd/text
-			   ";"
 			   telefone1/text
-			   ";"
 			   telefone2/text
-			   ";"
 			   email/text
-			   ";"
 			   tipo/text
-			   ";"
 			   rua/text
-			   ";"
 			   numero/text
-			   ";"
 			   complemento/text
-			   ";"
 			   bairro/text
-			   ";"
 			   cidade/text
-			   ";"
 			   uf/text
-			   ";"
 			   cep1/text
-			   ";"
 			   cep2/text
-			   ";"
 			   obs1/text
-			   ";"
 			   obs2/text
-			   ";"
 			   obs3/text
-			   ";"
 			   obs4/text
-			   ";"
 			   obs5/text
 			]
 
@@ -71,7 +45,8 @@ gravar: does
 ]
 
 novo: does
-	[
-		novoRegistro: true
-		codigo/enabled?: true
+	[		
+		titulo/text: "Cadastre o novo contato"
+		chavePrimaria/text: do chavear
+		apelido/enabled?: true		
 	]

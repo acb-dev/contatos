@@ -5,20 +5,21 @@ formulario: layout [
     size 950x520
     space 3x3
     below
-    h5 "Cadastre o novo contato"
+    titulo: h5 middle 900 "Cadastro de Contatos"
     across
-    button "Novo" [novo]
-    button "Procurar" [quit]
-    button "Editar" [quit]
-    button "Gravar" [gravar]
+    button "Novo"        [novo]
+	button "Abrir"       [abrir]
+    button "Procurar"    [quit]
+    button "Editar"      [quit]
+    button "Gravar"      [gravar]
     button "<< Primeiro" [quit]
-    button "< Anterior" [quit]
-    button "Próximo >" [quit]
-    button "Último >>" [quit]
-    button "Excluir" [quit]
-    button "Imprimir" [quit]
-    button "Listar" [quit]
-    button "Sair" [quit]    
+    button "< Anterior"  [quit]
+    button "Próximo >"   [quit]
+    button "Último >>"   [quit]
+    button "Excluir"     [quit]
+    button "Imprimir"    [quit]
+    button "Listar"      [quit]
+    button "Sair"        [quit]    
     return
     foto: image 100x100 %fotos\foto.jpg
     at 30x200
@@ -26,13 +27,14 @@ formulario: layout [
     origin 160x90
     text middle "Chave Primaria"
     chavePrimaria: text middle 185 ""
-    do [chavePrimaria/text: do chavear]
-    text middle 45 "Código"
-    codigo: field 100	
-    do [codigo/text: do codificar]
-	do [codigo/enabled?: false]	
+    ;do [chavePrimaria/text: do chavear]
+    ;text middle 45 "Código"
+    ;codigo: field 100 
+    ;do [codigo/text: do codificar]
+	;do [codigo/enabled?: false]	
     text middle 45 "Apelido"
     apelido: field 300 on-enter [set-focus nome]
+	do [apelido/enabled?: false]
     return
     space 3X10
     text middle "Nome"
@@ -186,6 +188,7 @@ formulario: layout [
     formulario/menu: [
         "Gerenciar" [
             "Novo"       novo
+			"Abrir"      abrir
             "Editar"     editar
 			"Gravar"     gravar
 			---
@@ -209,6 +212,7 @@ formulario: layout [
      formulario/actors: make object! [
             on-menu: func [face [object!] event [event!]][
                 if event/picked = 'novo     [novo]
+				if event/picket = 'abrir    [abrir]
                 if event/picked = 'editar   [quit]
 				if event/picked = 'gravar   [gravar]
 				if event/picked = 'excluir  [quit]
