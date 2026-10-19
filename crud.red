@@ -46,15 +46,67 @@ gravar: does
 		
 		save %cfg\ordem.cfg reduce[numRegistro/text]
 		save to-file nomeArquivo registro
+		
+		do desabilitar
 ]
 
 novo: does
 	[		
-		numRegistro/text: to-string do numerar
 		titulo/text: "Cadastre o novo contato"
-		chavePrimaria/text: do chavear
+		numRegistro/text: to-string do numerar		
+		chavePrimaria/text: do chavear		
 		do habilitar
+		do limpar
 	]
+	
+editar: does [
+	do habilitar
+]	
+
+	
+	
+limpar: does
+[
+clear apelido/text
+clear nome/text
+masculino/data: false
+feminino/data: false
+
+]	
+	
+limpar1: does
+[	
+   clear apelido/text
+   clear nome/text
+   masculino/data: false
+   feminino/data: false
+   clear dd/text
+   clear mm/text
+   clear aaaa/text
+   clear naturalidade/text
+   clear ufn/text
+   clear ddd/text
+   clear telefone1/text
+   clear telefone2/text
+   clear email/text
+   clear tipo/text
+   clear rua/text
+   clear numero/text
+   clear complemento/text
+   clear bairro/text
+   clear cidade/text
+   clear uf/text
+   clear cep1/text
+   clear cep2/text
+   clear obs1/text
+   clear obs2/text
+   clear obs3/text
+   clear obs4/text
+   clear obs5/text   
+ ]
+
+
+	
 
 habilitar: does
 [ 	 		   

@@ -10,7 +10,7 @@ formulario: layout [
     button "Novo"        [novo]
 	button "Abrir"       [abrir]
     button "Procurar"    [quit]
-    button "Editar"      [quit]
+    button "Editar"      [editar]
     button "Gravar"      [gravar]
     button "<< Primeiro" [quit]
     button "< Anterior"  [quit]
@@ -245,7 +245,7 @@ formulario: layout [
             on-menu: func [face [object!] event [event!]][
                 if event/picked = 'novo     [novo]
 				if event/picket = 'abrir    [abrir]
-                if event/picked = 'editar   [quit]
+                if event/picked = 'editar   [editar]
 				if event/picked = 'gravar   [gravar]
 				if event/picked = 'excluir  [quit]
 				if event/picked = 'primeiro [quit]
