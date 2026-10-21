@@ -242,20 +242,27 @@ formulario: layout [
 		"Sair" sair
     ]
 	
-     formulario/actors: make object! [
-            on-menu: func [face [object!] event [event!]][
-                if event/picked = 'novo     [novo]
-				if event/picket = 'abrir    [abrir]
-                if event/picked = 'editar   [editar]
-				if event/picked = 'gravar   [gravar]
-				if event/picked = 'excluir  [quit]
-				if event/picked = 'primeiro [quit]
-				if event/picked = 'anterior [quit]
-				if event/picked = 'proximo  [quit]
-				if event/picked = 'ultimo   [quit]
-				if event/picked = 'procurar [quit]
-				if event/picked = 'imprimir [quit]
-				if event/picked = 'listar   [quit]
-        ]]
-
+    formulario/actors: make object! [
+		on-menu: func [face [object!] event [event!]][
+			if event/picked = 'novo     [novo]
+			if event/picked = 'abrir    [abrir]
+			if event/picked = 'editar   [editar]
+			if event/picked = 'gravar   [gravar]
+			if event/picked = 'excluir  [quit]
+			if event/picked = 'primeiro [quit]
+			if event/picked = 'anterior [quit]
+			if event/picked = 'proximo  [quit]
+			if event/picked = 'ultimo   [quit]
+			if event/picked = 'procurar [quit]
+			if event/picked = 'imprimir [quit]
+			if event/picked = 'listar   [quit]]
+			
+		on-down: func [face [object!] event [event!]] [
+			habilitar]
+		
+		on-key-down: func [face [object!] event [event!]] [
+			
+		if	event/key = 'F1 [browse https://www.acbdev.dev.br]]
+	]			
+			
 view/flags formulario [resize]
