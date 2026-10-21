@@ -214,8 +214,9 @@ formulario: layout [
         underline
         font [color: blue]
         "www.acbdev.dev.br"
-        [browse https://www.acbdev.dev.br]
-]   
+        [browse https://www.acbdev.dev.br]		
+			
+]  
 	
     formulario/menu: [
         "Gerenciar" [

@@ -1,18 +1,31 @@
 Red [ ]
 
+novo: does
+	[		
+		titulo/text: "Cadastre o novo contato"
+		numRegistro/text: to-string do numerar		
+		chavePrimaria/text: do chavear		
+		do habilitar
+		do limpar
+	]
+	
+abrir: does
+	[
+		quit
+	]
 gravar: does
 [
 
 		
 		nomeArquivo: rejoin ["reg\"nome/text".ficha"]
 
-		sexo:   case [
+		sexo:   case
+				[
 					masculino/data = true "M"
 					feminino/data  = true "F"
 				]
 				
-		registro: reduce
-		
+		registro: reduce		
 			[
 			   numRegistro/text
 			   chavePrimaria/text	  	 		   
@@ -43,38 +56,27 @@ gravar: does
 			   obs4/text
 			   obs5/text
 			]
+			
+		indice:			
+			rejoin
+			[
+				numRegistro/text " " chavePrimaria/text " " nome/text
+			]
 		
 		save %cfg\ordem.cfg reduce[numRegistro/text]
+		write/append/lines %cfg\indice.cfg indice
 		save to-file nomeArquivo registro
 		
 		do desabilitar
 ]
 
-novo: does
-	[		
-		titulo/text: "Cadastre o novo contato"
-		numRegistro/text: to-string do numerar		
-		chavePrimaria/text: do chavear		
-		do habilitar
-		do limpar
-	]
+
 	
 editar: does [
 	do habilitar
 ]	
-
-	
-	
+		
 limpar: does
-[
-clear apelido/text
-clear nome/text
-masculino/data: false
-feminino/data: false
-
-]	
-	
-limpar1: does
 [	
    clear apelido/text
    clear nome/text
