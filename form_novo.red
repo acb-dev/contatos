@@ -34,23 +34,23 @@ formulario: layout [
     return
     space 3X10
     text middle "Nome"
-    nome: field 400  on-enter [set-focus dd]
+    nome: field 400  on-enter [set-focus diaNasc]
     text middle "Sexo"
     masculino: radio "Masculino"
     feminino:  radio "Feminino"
     return
     text middle "Nascimento(dd/mm/aaaa)"
-    dd: field 20 on-enter [set-focus mm]
+    diaNasc: field 20 on-enter [set-focus mesNasc]
     text middle 10 "/"
-    mm: field 20 on-enter [set-focus aaaa]
+    mesNasc: field 20 on-enter [set-focus anoNasc]
     text middle 10 "/"
-    aaaa: field 40
+    anoNasc: field 40
         on-enter [
-        idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
+        idade/text: to-string etarizar to-integer diaNasc/text to-integer mesNasc/text to-integer anoNasc/text
         anos/text: " anos"
         set-focus naturalidade
         ]
-    on-unfocus [idade/text: to-string etarizar to-integer dd/text to-integer mm/text to-integer aaaa/text
+    on-unfocus [idade/text: to-string etarizar to-integer diaNasc/text to-integer mesNasc/text to-integer anoNasc/text
                 anos/text: " anos"
     ]
     text middle 30 "Idade"

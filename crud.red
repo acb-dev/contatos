@@ -31,9 +31,9 @@ gravar: does
 		   apelido/text			   
 		   nome/text
 		   sexo
-		   dd/text
-		   mm/text
-		   aaaa/text
+		   diaNasc/text
+		   mesNasc/text
+		   anoNasc/text
 		   naturalidade/text
 		   ufn/text
 		   ddd/text
@@ -81,9 +81,9 @@ limpar: does
    clear nome/text
    masculino/data: false
    feminino/data: false
-   clear dd/text
-   clear mm/text
-   clear aaaa/text
+   clear diaNasc/text
+   clear mesNasc/text
+   clear anoNasc/text
    clear naturalidade/text
    clear ufn/text
    clear ddd/text
@@ -115,9 +115,9 @@ habilitar: does
 	nome/enabled?: true 
 	masculino/enabled?: true
 	feminino/enabled?: true
-	dd/enabled?: true
-	mm/enabled?: true
-	aaaa/enabled?: true
+	diaNasc/enabled?: true
+	mesNasc/enabled?: true
+	anoNasc/enabled?: true
 	naturalidade/enabled?: true
 	ufn/enabled?: true
 	ddd/enabled?: true
@@ -146,9 +146,9 @@ desabilitar: does
 	nome/enabled?: false 
 	masculino/enabled?: false
 	feminino/enabled?: false
-	dd/enabled?: false
-	mm/enabled?: false
-	aaaa/enabled?: false
+	diaNasc/enabled?: false
+	mesNasc/enabled?: false
+	anoNasc/enabled?: false
 	naturalidade/enabled?: false
 	ufn/enabled?: false
 	ddd/enabled?: false

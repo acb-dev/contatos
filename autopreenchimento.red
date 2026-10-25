@@ -6,9 +6,6 @@ numerar: [
 	ordem: aux2 + 1
 ]
 
-
-
-
 chavear: [
     chave: to-string now/precise
     replace/all chave "-" ""
@@ -31,17 +28,29 @@ chavear: [
 ]
 
 etarizar: func [
-                dd 
-                mm 
-                aaaa 
+                diaNasc
+                mesNasc 
+                anoNasc
                ] 
                [
-                anoAtual: now/year
-                mesAtual: now/month
+                diaAtual: now/day
+				mesAtual: now/month
+				anoAtual: now/year
+				
+				anosDeVida: anoAtual - anoNasc
                 
-                return (anoAtual - aaaa)           
-]
-idadizar: [2 + 198]
-codificar: [
-replace/all to-string now/time  ":" ""
-]
+				 
+
+				either mesAtual < mesNasc
+					[anosDeVida: anosDeVida - 1]
+					[either mesAtual = mesNasc
+						[if diaAtual < diaNasc [anosDeVida: anosDeVida - 1]]
+						[anosDeVida: anosDeVida]			
+					]
+				return: anosDeVida				
+				]				 
+				
+				
+				
+                
+                
