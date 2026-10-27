@@ -4,7 +4,8 @@ novo: does
 	[		
 		titulo/text: "Cadastre o novo contato"
 		numRegistro/text: to-string do numerar		
-		chavePrimaria/text: do chavear		
+		chavePrimaria/text: do chavear
+		nome/enabled?: true
 		do habilitar
 		do limpar
 	]
@@ -112,7 +113,7 @@ limpar: does
 habilitar: does
 [ 	 		   
 	apelido/enabled?: true			   
-	nome/enabled?: true 
+	;nome/enabled?: true 
 	masculino/enabled?: true
 	feminino/enabled?: true
 	diaNasc/enabled?: true
