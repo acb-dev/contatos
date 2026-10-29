@@ -26,7 +26,7 @@ formulario: layout [
     button "Foto" [quit]
     origin 160x90
 	text middle "Nº"
-	numRegistro: text ""
+	numRegistro: text middle 40 ""
     text middle "Chave Primaria"
     chavePrimaria: text middle 185 ""    
     text middle 45 "Apelido"
@@ -265,8 +265,7 @@ formulario: layout [
 			
 		if	event/key = 'F1         [browse https://www.acbdev.dev.br]
         if	event/key = 'F2         [browse https://www.acbdev.dev.br]
-        if	event/key = 'insert     [novo]
-        if	event/key = 'delete     [excluir]
+        if	event/key = 'insert     [novo]       
 	]]	
 
 			

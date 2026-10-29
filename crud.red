@@ -3,11 +3,11 @@ Red [ ]
 novo: does
 	[		
 		titulo/text: "Cadastre o novo contato"
+		do limpar
 		numRegistro/text: to-string do numerar		
 		chavePrimaria/text: do chavear
 		nome/enabled?: true
-		do habilitar
-		do limpar
+		do habilitar	
 	]
 	
 consultar: does
