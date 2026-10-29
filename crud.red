@@ -10,15 +10,20 @@ novo: does
 		do limpar
 	]
 	
-abrir: does
+consultar: does
 [
 	ficha: load request-file/title/file/filter "Escolha o contato" %"./reg/" [ "Contatos" "*.ficha"]
+		
+		case 
+		[
+			ficha/5 = "M" masculino/data: true
+			ficha/5 = "F" feminino/data:  true
+		]
 	
 		numRegistro/text: ficha/1
 		chavePrimaria/text: ficha/2
 		apelido/text: ficha/3			   
-		nome/text: ficha/4
-		;sexo: ficha/5
+		nome/text: ficha/4		
 		diaNasc/text: ficha/6
 		mesNasc/text: ficha/7
 		anoNasc/text: ficha/8
@@ -102,7 +107,16 @@ gravar: does
 	do desabilitar
 ]
 
+excluir: does [
+	arqExcluir:
+		rejoin[
+		".\reg\" nome/text ".ficha"
+		] 
+	delete to-file arqExcluir
 
+	do limpar
+	do desabilitar
+]
 	
 editar: does [
 	do habilitar
@@ -110,6 +124,8 @@ editar: does [
 		
 limpar: does
 [	
+   clear numRegistro/text
+   clear chavePrimaria/text
    clear apelido/text
    clear nome/text
    masculino/data: false

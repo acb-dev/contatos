@@ -8,7 +8,7 @@ formulario: layout [
     titulo: h5 middle 900 "Cadastro de Contatos"
     across
     button "Novo"        [novo]
-	button "Abrir"       [abrir]
+	button "Consultar"   [consultar]
     button "Procurar"    [quit]
     button "Editar"      [editar]
     button "Gravar"      [gravar]
@@ -16,7 +16,7 @@ formulario: layout [
     button "< Anterior"  [quit]
     button "Próximo >"   [quit]
     button "Último >>"   [quit]
-    button "Excluir"     [quit]
+    button "Excluir"     [excluir]
     button "Imprimir"    [quit]
     button "Listar"      [quit]
     button "Sair"        [quit]    
@@ -214,14 +214,15 @@ formulario: layout [
         underline
         font [color: blue]
         "www.acbdev.dev.br"
-        [browse https://www.acbdev.dev.br]		
+        [browse https://www.acbdev.dev.br]	
+]        	
 			
-]  
+
 	
     formulario/menu: [
         "Gerenciar" [
             "Novo"       novo
-			"Abrir"      abrir
+			"Consultar"  consultar
             "Editar"     editar
 			"Gravar"     gravar
 			---
@@ -244,25 +245,29 @@ formulario: layout [
 	
     formulario/actors: make object! [
 		on-menu: func [face [object!] event [event!]][
-			if event/picked = 'novo     [novo]
-			if event/picked = 'abrir    [abrir]
-			if event/picked = 'editar   [editar]
-			if event/picked = 'gravar   [gravar]
-			if event/picked = 'excluir  [quit]
-			if event/picked = 'primeiro [quit]
-			if event/picked = 'anterior [quit]
-			if event/picked = 'proximo  [quit]
-			if event/picked = 'ultimo   [quit]
-			if event/picked = 'procurar [quit]
-			if event/picked = 'imprimir [quit]
-			if event/picked = 'listar   [quit]]
+			if event/picked = 'novo       [novo]
+			if event/picked = 'consultar  [consultar]
+			if event/picked = 'editar     [editar]
+			if event/picked = 'gravar     [gravar]
+			if event/picked = 'excluir    [excluir]
+			if event/picked = 'primeiro   [quit]
+			if event/picked = 'anterior   [quit]
+			if event/picked = 'proximo    [quit]
+			if event/picked = 'ultimo     [quit]
+			if event/picked = 'procurar   [quit]
+			if event/picked = 'imprimir   [quit]
+			if event/picked = 'listar     [quit]]
 			
 		on-down: func [face [object!] event [event!]] [
-			habilitar]
+			editar]
 		
 		on-key-down: func [face [object!] event [event!]] [
 			
-		if	event/key = 'F1 [browse https://www.acbdev.dev.br]]
-	]			
+		if	event/key = 'F1         [browse https://www.acbdev.dev.br]
+        if	event/key = 'F2         [browse https://www.acbdev.dev.br]
+        if	event/key = 'insert     [novo]
+        if	event/key = 'delete     [excluir]
+	]]	
+
 			
 view/flags formulario [resize]
