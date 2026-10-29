@@ -11,9 +11,41 @@ novo: does
 	]
 	
 abrir: does
-	[
-		quit
-	]
+[
+	ficha: load request-file/title/file/filter "Escolha o contato" %"./reg/" [ "Contatos" "*.ficha"]
+	
+		numRegistro/text: ficha/1
+		chavePrimaria/text: ficha/2
+		apelido/text: ficha/3			   
+		nome/text: ficha/4
+		;sexo: ficha/5
+		diaNasc/text: ficha/6
+		mesNasc/text: ficha/7
+		anoNasc/text: ficha/8
+		naturalidade/text: ficha/9
+		ufn/text: ficha/10
+		ddd/text: ficha/11
+		telefone1/text: ficha/12
+		telefone2/text: ficha/13
+		email/text: ficha/14
+		tipo/text: ficha/15
+		rua/text: ficha/16
+		numero/text: ficha/17
+		complemento/text: ficha/18
+		bairro/text: ficha/19
+		cidade/text: ficha/20
+		uf/text: ficha/21
+		cep1/text: ficha/22
+		cep2/text: ficha/23
+		obs1/text: ficha/24
+		obs2/text: ficha/25
+		obs3/text: ficha/26
+		obs4/text: ficha/27
+		obs5/text: ficha/28
+		
+
+	show formulario	
+]
 	
 gravar: does
 [		
