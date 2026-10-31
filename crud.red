@@ -2,6 +2,8 @@ Red [ ]
 
 novo: does
 	[		
+		eNovo: true
+		temFoto: false
 		titulo/text: "Cadastre o novo contato"
 		do limpar
 		numRegistro/text: to-string do numerar		
@@ -12,48 +14,57 @@ novo: does
 	
 consultar: does
 [
+	do limpar
+	do desabilitar
+
 	ficha: load request-file/title/file/filter "Escolha o contato" %"./reg/" [ "Contatos" "*.ficha"]
+
+	eNovo: false
 		
-		case 
-		[
-			ficha/5 = "M" masculino/data: true
-			ficha/5 = "F" feminino/data:  true
-		]
-	
-		numRegistro/text: ficha/1
-		chavePrimaria/text: ficha/2
-		apelido/text: ficha/3			   
-		nome/text: ficha/4		
-		diaNasc/text: ficha/6
-		mesNasc/text: ficha/7
-		anoNasc/text: ficha/8
-		naturalidade/text: ficha/9
-		ufn/text: ficha/10
-		ddd/text: ficha/11
-		telefone1/text: ficha/12
-		telefone2/text: ficha/13
-		email/text: ficha/14
-		tipo/text: ficha/15
-		rua/text: ficha/16
-		numero/text: ficha/17
-		complemento/text: ficha/18
-		bairro/text: ficha/19
-		cidade/text: ficha/20
-		uf/text: ficha/21
-		cep1/text: ficha/22
-		cep2/text: ficha/23
-		obs1/text: ficha/24
-		obs2/text: ficha/25
-		obs3/text: ficha/26
-		obs4/text: ficha/27
-		obs5/text: ficha/28
-		
+	case
+	[
+		ficha/5 = "M" masculino/data: true
+		ficha/5 = "F" feminino/data:  true
+	]
+
+	numRegistro/text: ficha/1
+	chavePrimaria/text: ficha/2
+	either apelido/text = none [apelido/text: ""] [apelido/text ficha/3]
+	nome/text: ficha/4
+	either diaNasc/text = none [diaNasc/text: "00"] [diaNasc/text: ficha/6]
+	either mesNasc/text = none [mesNasc/text: "00"] [mesNasc/text: ficha/7]
+	either anoNasc/text = none [anoNasc/text: "0000"] [anoNasc/text: ficha/8]
+	either naturalidade/text = none [naturalidade/text: ""] [naturalidade/text: ficha/9]
+	either ufn/text = none [ufn/text: ""] [ufn/text: ficha/10]
+	either ddd/text = none [ddd/text: ""] [ddd/text: ficha/11]
+	either telefone1/text = none [telefone1/text: ""] [telefone1/text: ficha/12]
+	either telefone2/text = none [telefone2/text: ""] [telefone2/text: ficha/13]
+	either email/text = none [email/text: ""] [email/text: ficha/14]
+	either tipo/text = none [tipo/text: ""] [tipo/text: ficha/15]
+	either rua/text = none [rua/text: ""] [rua/text: ficha/16]
+	either numero/text = none [numero/text: ""] [numero/text: ficha/17]
+	either complemento/text = none [complemento/text: ""] [complemento/text: ficha/18]
+	either bairro/text = none [bairro/text: ""] [bairro/text: ficha/19]
+	either cidade/text = none [cidade/text: ""] [cidade/text: ficha/20]
+	either uf/text = none [uf/text: ""] [uf/text: ficha/21]
+	either cep1/text = none [cep1/text: ""] [cep1/text: ficha/22]
+	either cep2/text = none [cep2/text: ""] [cep2/text: ficha/23]
+	either obs1/text = none [obs1/text: ""] [obs1/text: ficha/24]
+	either obs2/text = none [obs2/text: ""] [obs2/text: ficha/25]
+	either obs3/text = none [obs3/text: ""] [obs3/text: ficha/26]
+	either obs4/text = none [obs4/text: ""] [obs4/text: ficha/27]
+	either obs5/text = none [obs5/text: ""] [obs5/text: ficha/28]
+
+
+	idade/text: to-string etarizar to-integer diaNasc/text to-integer mesNasc/text to-integer anoNasc/text
+	anos/text: " anos"
+
 
 	show formulario	
 ]
 	
 gravar: does
-[		
+[
 	nomeArquivo: rejoin ["reg\"nome/text".ficha"]
 
 	sexo:   case
@@ -92,18 +103,22 @@ gravar: does
 		   obs3/text
 		   obs4/text
 		   obs5/text
+		   true
 		]
+
 		
 	indice:			
 		rejoin
 		[
 			numRegistro/text " " chavePrimaria/text " " nome/text
 		]
-	
-	save %cfg\ordem.cfg reduce[numRegistro/text]
-	write/append/lines %cfg\indice.cfg indice
+
 	save to-file nomeArquivo registro
-	
+	if	eNovo = true [save %cfg\ordem.cfg reduce[numRegistro/text]]
+	if	eNovo = true [write/append/lines %cfg\indice.cfg indice]
+
+	eNovo = false
+
 	do desabilitar
 ]
 
@@ -121,7 +136,7 @@ excluir: does [
 editar: does [
 	do habilitar
 ]	
-		
+
 limpar: does
 [	
    clear numRegistro/text

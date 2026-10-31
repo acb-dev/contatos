@@ -33,6 +33,7 @@ etarizar: func [
                 anoNasc
                ] 
                [
+
                 diaAtual: now/day
 				mesAtual: now/month
 				anoAtual: now/year
