@@ -9,8 +9,8 @@ Red [
 ]
 
 
-do %autopreenchimento.red
+do %auto.red
 
 do %crud.red
 
-do %form_novo.red
+do %formulario.red

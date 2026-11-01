@@ -46,13 +46,12 @@ formulario: layout [
     text middle 10 "/"
     anoNasc: field 40
         on-enter [
-        idade/text: to-string etarizar to-integer diaNasc/text to-integer mesNasc/text to-integer anoNasc/text
-        anos/text: " anos"
+        do etarizar
+        ;idade/text: to-string etarizar to-integer diaNasc/text to-integer mesNasc/text to-integer anoNasc/text
+        ;anos/text: " anos"
         set-focus naturalidade
         ]
-    on-unfocus [idade/text: to-string etarizar to-integer diaNasc/text to-integer mesNasc/text to-integer anoNasc/text
-                anos/text: " anos"
-    ]
+    on-unfocus [do etarizar]
     text middle 30 "Idade"
     idade: text middle 18 ""
 	anos: text middle 30 ""

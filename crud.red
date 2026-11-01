@@ -1,16 +1,16 @@
 Red [ ]
 
 novo: does
-	[		
-		eNovo: true
-		temFoto: false
-		titulo/text: "Cadastre o novo contato"
-		do limpar
-		numRegistro/text: to-string do numerar		
-		chavePrimaria/text: do chavear
-		nome/enabled?: true
-		do habilitar	
-	]
+[
+	eNovo: true
+	temFoto: false
+	titulo/text: "Cadastre o novo contato"
+	do limpar
+	numRegistro/text: to-string do numerar
+	chavePrimaria/text: do chavear
+	nome/enabled?: true
+	do habilitar
+]
 	
 consultar: does
 [
@@ -31,9 +31,9 @@ consultar: does
 	chavePrimaria/text: ficha/2
 	either apelido/text = none [apelido/text: ""] [apelido/text ficha/3]
 	nome/text: ficha/4
-	either diaNasc/text = none [diaNasc/text: "00"] [diaNasc/text: ficha/6]
-	either mesNasc/text = none [mesNasc/text: "00"] [mesNasc/text: ficha/7]
-	either anoNasc/text = none [anoNasc/text: "0000"] [anoNasc/text: ficha/8]
+	either diaNasc/text = none [diaNasc/text: ""] [diaNasc/text: ficha/6]
+	either mesNasc/text = none [mesNasc/text: ""] [mesNasc/text: ficha/7]
+	either anoNasc/text = none [anoNasc/text: ""] [anoNasc/text: ficha/8]
 	either naturalidade/text = none [naturalidade/text: ""] [naturalidade/text: ficha/9]
 	either ufn/text = none [ufn/text: ""] [ufn/text: ficha/10]
 	either ddd/text = none [ddd/text: ""] [ddd/text: ficha/11]
@@ -56,9 +56,9 @@ consultar: does
 	either obs5/text = none [obs5/text: ""] [obs5/text: ficha/28]
 
 
-	idade/text: to-string etarizar to-integer diaNasc/text to-integer mesNasc/text to-integer anoNasc/text
-	anos/text: " anos"
-
+	do etarizar
+	;idade/text: to-string etarizar to-integer diaNasc/text to-integer mesNasc/text to-integer anoNasc/text
+	;anos/text: " anos"
 
 	show formulario	
 ]
@@ -122,7 +122,8 @@ gravar: does
 	do desabilitar
 ]
 
-excluir: does [
+excluir: does
+[
 	arqExcluir:
 		rejoin[
 		".\reg\" nome/text ".ficha"
@@ -133,7 +134,8 @@ excluir: does [
 	do desabilitar
 ]
 	
-editar: does [
+editar: does
+[
 	do habilitar
 ]	
 
