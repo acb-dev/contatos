@@ -7,20 +7,21 @@ formulario: layout [
     below
     titulo: h5 middle 900 "Cadastro de Contatos"
     across
-    button "Novo"        [novo]
-	button "Consultar"   [consultar]
+    button "Novo"        [do novo]
+	button "Consultar"   [do consultar]
     button "Procurar"    [quit]
-    button "Editar"      [editar]
-    button "Gravar"      [gravar]
+    button "Editar"      [do editar]
+    button "Gravar"      [do gravar]
     button "<< Primeiro" [quit]
     button "< Anterior"  [quit]
     button "Próximo >"   [quit]
     button "Último >>"   [quit]
-    button "Excluir"     [excluir]
+    button "Excluir"     [do excluir]
     button "Imprimir"    [quit]
     button "Listar"      [quit]
     button "Sair"        [quit]    
     return
+    do [temFoto: false]
     foto: image 100x100 %fotos\foto.jpg
     at 30x200
     button "Foto" [quit]
@@ -101,7 +102,7 @@ formulario: layout [
     email: field 400 on-enter [set-focus tipo]
     return
     text middle 24 "Tipo"
-     tipo: drop-down 90 data[
+    tipo: drop-down 90 data[
             "Rua"
             "Avenida"
             "Praça"
@@ -244,11 +245,11 @@ formulario: layout [
 	
     formulario/actors: make object! [
 		on-menu: func [face [object!] event [event!]][
-			if event/picked = 'novo       [novo]
-			if event/picked = 'consultar  [consultar]
-			if event/picked = 'editar     [editar]
-			if event/picked = 'gravar     [gravar]
-			if event/picked = 'excluir    [excluir]
+			if event/picked = 'novo       [do novo]
+			if event/picked = 'consultar  [do consultar]
+			if event/picked = 'editar     [do editar]
+			if event/picked = 'gravar     [do gravar]
+			if event/picked = 'excluir    [do excluir]
 			if event/picked = 'primeiro   [quit]
 			if event/picked = 'anterior   [quit]
 			if event/picked = 'proximo    [quit]

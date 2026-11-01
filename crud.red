@@ -1,9 +1,8 @@
 Red [ ]
 
-novo: does
+novo:
 [
 	eNovo: true
-	temFoto: false
 	titulo/text: "Cadastre o novo contato"
 	do limpar
 	numRegistro/text: to-string do numerar
@@ -12,8 +11,12 @@ novo: does
 	do habilitar
 ]
 	
-consultar: does
+consultar:
 [
+	;do diaNasc/text: to-string 00
+	;do mesNasc/text: to-string 00
+	;do anoNasc/text: to-string 0000
+
 	do limpar
 	do desabilitar
 
@@ -63,7 +66,7 @@ consultar: does
 	show formulario	
 ]
 	
-gravar: does
+gravar:
 [
 	nomeArquivo: rejoin ["reg\"nome/text".ficha"]
 
@@ -103,7 +106,7 @@ gravar: does
 		   obs3/text
 		   obs4/text
 		   obs5/text
-		   true
+
 		]
 
 		
@@ -122,7 +125,7 @@ gravar: does
 	do desabilitar
 ]
 
-excluir: does
+excluir:
 [
 	arqExcluir:
 		rejoin[
@@ -134,13 +137,17 @@ excluir: does
 	do desabilitar
 ]
 	
-editar: does
+editar:
 [
 	do habilitar
 ]	
 
-limpar: does
+limpar:
 [	
+   ;if diaNasc = to-string 00   [diaNasc = ""]
+   ;if mesNasc = to-string 00   [mesNasc = ""]
+   ;if anoNasc = to-string 0000 [anoNasc = ""]
+
    clear numRegistro/text
    clear chavePrimaria/text
    clear apelido/text
@@ -170,12 +177,15 @@ limpar: does
    clear obs3/text
    clear obs4/text
    clear obs5/text   
+
+   idade/text: ""
+   anos/text: ""
  ]
 
 
 	
 
-habilitar: does
+habilitar:
 [ 	 		   
 	apelido/enabled?: true			   
 	;nome/enabled?: true 
@@ -206,8 +216,8 @@ habilitar: does
 	obs5/enabled?: true
 ]
 
-desabilitar: does
-[ 	 		   
+desabilitar:
+[
 	apelido/enabled?: false			   
 	nome/enabled?: false 
 	masculino/enabled?: false
