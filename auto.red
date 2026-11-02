@@ -30,19 +30,26 @@ chavear: [
 etarizar:
 [
 
-dd:   either diaNasc/text <> "" [to-integer diaNasc/text] [0]
-mm:   either mesNasc/text <> "" [to-integer mesNasc/text] [0]
-aaaa: either anoNasc/text <> "" [to-integer anoNasc/text] [0]
+;dd:   either diaNasc/text <> none [to-integer diaNasc/text] [0]
+;mm:   either mesNasc/text <> none [to-integer mesNasc/text] [0]
+;aaaa: either anoNasc/text <> none [to-integer anoNasc/text] [0]
 
-temDataZerada: any [dd = 0 mm = 0 aaaa = 0]
+;dd:   if diaNasc/text = none
+;mm:   if mesNasc/text = none
+;aaaa: if anoNasc/text = none
 
-if temDataZerada = true [exit]
+dd:   to-integer diaNasc/text
+mm:   to-integer mesNasc/text
+aaaa: to-integer anoNasc/text
+
+if any [dd = 0 mm = 0 aaaa = 0] [exit]
+
+
+;temDataZerada: any [dd=0 mm=0 aaaa=0]
+
+;if temDataZerada [exit]
 
 ;if all [true diaNasc/text <> "" mesNasc/text <> "" anoNasc/text <> "" true] [exit]
-
-;dd:   to-integer diaNasc/text
-;mm:   to-integer mesNasc/text
-;aaaa: to-integer anoNasc/text
 
 diaAtual: now/day
 mesAtual: now/month
