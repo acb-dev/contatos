@@ -156,7 +156,7 @@ excluir:
 		"./del/" nome/text ".ficha"
 		]
 		
-	load to-file arqOrigem save to-file arqDestino
+	save to-file arqDestino load to-file arqOrigem 
 	
 	
 	delete to-file arqOrigem
