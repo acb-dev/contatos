@@ -3,6 +3,7 @@ Red [ ]
 novo:
 [
 	eNovo: true
+	temFoto: false
 	titulo/text: "Cadastre o novo contato"
 	do limpar
 	numRegistro/text: to-string do numerar
@@ -124,6 +125,7 @@ gravar:
  		   xobs3
 		   xobs4
 		   xobs5
+		   temFoto
 		]
 
 
