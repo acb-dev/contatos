@@ -210,8 +210,7 @@ limpar:
 
 habilitar:
 [ 	 		   
-	apelido/enabled?: true			   
-	;nome/enabled?: true 
+	apelido/enabled?: true	
 	masculino/enabled?: true
 	feminino/enabled?: true
 	diaNasc/enabled?: true
