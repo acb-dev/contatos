@@ -136,7 +136,6 @@ gravar:
 		]
 
 	save to-file nomeArquivo registro
-	
 
 	if	eNovo = true [save %./cfg/ordem.cfg reduce[numRegistro/text]]
 	if	eNovo = true [write/append/lines %./cfg/indice.cfg indice]
@@ -267,4 +266,28 @@ desabilitar:
 	obs3/enabled?: false
 	obs4/enabled?: false
 	obs5/enabled?: false
+]
+
+fotografar:
+[
+   fotoOriginal: load request-file/title/filter
+    "Escolha a foto"
+    ["PNG" "*.PNG" "jpg" "*.jpg" "jpeg" "*.jpeg" "GIF" "*.GIF" "BMP" "*.BMP"
+     "SVG" "*.SVG" "WebP" "*.WebP" "TIFF" "*.TIFF" "AVIF" "*.AVIF" "HEIC" "*.HEIC"
+     "ICO" "*.ICO"]
+
+    fotoGravar: make image! fotoOriginal
+
+   preExtensao: split to-string fotoOriginal "."
+   extensao: preExtensao/2
+
+   fotoDestino: rejoin ["./fotos/" nome/text ".png"]
+
+   save/as to-file fotoDestino fotoGravar 'png
+
+   ;foto: to-file fotoDestino
+
+   temFoto: true
+
+   show formulario
 ]

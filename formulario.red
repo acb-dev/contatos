@@ -21,10 +21,9 @@ formulario: layout [
     button "Listar"      [quit]
     button "Sair"        [quit]    
     return
-    do [temFoto: false]
-    foto: image 100x100 %fotos\foto.jpg
+   ;foto: image 100x100 %./fotos/foto.jpg
     at 30x200
-    button "Foto" [quit]
+    button "Foto" [do fotografar]
     origin 160x90
 	text middle "Nº"
 	numRegistro: text middle 40 ""
@@ -268,5 +267,4 @@ formulario: layout [
         if	event/key = 'insert     [novo]       
 	]]	
 
-			
 view/flags formulario [resize]
