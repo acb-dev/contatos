@@ -272,9 +272,8 @@ fotografar:
 [
    fotoOriginal: load request-file/title/filter
     "Escolha a foto"
-    ["PNG" "*.PNG" "jpg" "*.jpg" "jpeg" "*.jpeg" "GIF" "*.GIF" "BMP" "*.BMP"
-     "SVG" "*.SVG" "WebP" "*.WebP" "TIFF" "*.TIFF" "AVIF" "*.AVIF" "HEIC" "*.HEIC"
-     "ICO" "*.ICO"]
+    ["PNG" "*.PNG" "jpg" "*.jpg" "jpeg" "*.jpeg" "GIF" "*.GIF" "BMP" "*.BMP" "jfif" "*.jfif"
+     "SVG" "*.SVG" "WebP" "*.WebP" "TIFF" "*.TIFF" "AVIF" "*.AVIF" "HEIC" "*.HEIC" "ICO" "*.ICO"]
 
     fotoGravar: make image! fotoOriginal
 
@@ -285,9 +284,9 @@ fotografar:
 
    save/as to-file fotoDestino fotoGravar 'png
 
-   ;foto: to-file fotoDestino
-
-   temFoto: true
-
+   foto/image: fotoGravar   
+   
    show formulario
+   
+   temFoto: true   
 ]
