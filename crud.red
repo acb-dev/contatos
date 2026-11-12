@@ -56,8 +56,8 @@ consultar:
 	obs5/text: ficha/28
 
 
-	do etarizar	
 	do carregarFoto
+	do etarizar
 	show formulario
 ]
 
