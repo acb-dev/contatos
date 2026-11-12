@@ -57,12 +57,13 @@ consultar:
 
 
 	do etarizar	
+	do carregarFoto
 	show formulario
 ]
 
 gravar:
 [
-	nomeArquivo: rejoin ["reg\"nome/text".ficha"]
+	nomeArquivo: rejoin ["./reg/"nome/text".ficha"]
 
 	sexo:   case
 			[
@@ -205,6 +206,7 @@ limpar:
 
    anos/text: ""
    idade/text: ""
+   foto/image load %./fotos/semfoto.png
 ]	
 
 habilitar:
@@ -289,4 +291,15 @@ fotografar:
    show formulario
    
    temFoto: true   
+]
+
+carregarFoto:
+[
+nomeFoto: rejoin [ "./fotos/" ficha/4 ".png"]
+
+either exists? to-file nomeFoto
+[fotoCarregar: make image! load to-file nomeFoto]
+[fotoCarregar: make image! load %./fotos/semfoto.png]
+
+foto/image: fotoCarregar
 ]

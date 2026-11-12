@@ -21,7 +21,7 @@ formulario: layout [
     button "Listar"      [quit]
     button "Sair"        [quit]    
     return
-    foto: image 100x100 %./fotos/foto.jpg
+    foto: image 100x100 %./fotos/semfoto.png
     at 30x200
     button "Foto" [do fotografar]
     origin 160x90
