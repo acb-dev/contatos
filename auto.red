@@ -34,7 +34,7 @@ dd:   to-integer diaNasc/text
 mm:   to-integer mesNasc/text
 aaaa: to-integer anoNasc/text
 
-if any [dd = 0 mm = 0 aaaa = 0] [exit]
+if any [dd = 0 mm = 0 aaaa = 0] [return none]
 
 diaAtual: now/day
 mesAtual: now/month
